@@ -1,0 +1,3 @@
+---
+# defaults file for ansibles_vim
+vim_default_release: ""
