@@ -1,15 +1,23 @@
 ---
 
 - name: apt update
+  become: true
   apt:
     update_cache: yes
 
 - name: apt upgrade
+  become: true
   apt:
     upgrade: full
 
 - name: apt remove vim
+  become: true
   apt:
     name: vim
-    state: absent
+    state: removed
 
+- name: delete usr vim 
+  become: true
+  file:
+    path: "/usr/local/vim8"
+    state: absent

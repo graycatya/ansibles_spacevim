@@ -1,5 +1,14 @@
 ---
-- hosts: localhost
-  remote_user: root
-  roles:
-    - ansibles_vim
+
+- hosts: centos7
+  remote_user: cat
+  become: yes
+  become_method: sudo
+
+  vars_files:
+    - ../defaults/main.yml
+
+  tasks:
+    - name: test config
+      import_tasks: ../tasks/main.yml
+      

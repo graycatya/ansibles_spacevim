@@ -1,10 +1,30 @@
 ---
 
 - name: yum update
+  become: true
   yum:
-    update_cache: yes
+    name: "*"
+    state: latest
 
 - name: yum remove vim
+  become: true
   yum:
     name: vim
+    state: removed
+
+- name: delete usr vim 
+  become: true
+  file:
+    path: "/usr/local/vim8"
     state: absent
+
+- name: yum install defaults Software
+  become: true
+  yum:
+    name: "{{ yum_packages }}"
+    enablerepo: ius
+  register: task_result
+  until: task_result is success
+  retries: 3
+  delay: 10
+  when: yum_packages is defuned
