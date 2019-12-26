@@ -1,3 +1,4 @@
 ---
 # defaults file for ansibles_vim
+#可被覆盖的默认变量
 vim_default_release: ""
