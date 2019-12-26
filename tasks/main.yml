@@ -1,2 +1,11 @@
 ---
 # tasks file for ansibles_vim
+
+# Install
+- name: debian install spacevim
+  include_tasks: setup-Debian.yml
+  when: ansible_pkg_mgr == "apt"
+
+- name: redhat install spacevim
+  include_tasks: setup-RedHat.yml
+  when: ansible_pkg_mgr == "yum"

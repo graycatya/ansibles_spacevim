@@ -1,4 +1,67 @@
 ---
 # defaults file for ansibles_vim
 #可被覆盖的默认变量
-vim_default_release: ""
+
+#################
+# Debian & Ubuntu #
+#################
+
+apt_python_version: "3.6"
+
+apt_packages:
+ - wget 
+ - curl 
+ - cmake 
+ - fontconfig
+ - git 
+ - lua* 
+ - ruby 
+ - libncurses5-dev
+ - ttf-mscorefonts-installer
+ - ctags 
+ - clang 
+ - nodejs 
+ - net-tools
+ - python3-pip
+ - python-pip
+ - python{{ apt_python_version }}
+ - python{{ apt_python_version }}-dev
+ - python{{ apt_python_version }}-doc
+ - python 
+ - python-dev
+ - python-doc
+
+##########
+# CentOS #
+##########
+
+yum_packages:
+ - gcc 
+ - gcc-c++
+ - mkfontscale
+ - fontconfig
+ - ncurses-devel
+ - git 
+ - make 
+ - cmake 
+ - centos-release-scl
+ - ruby 
+ - ruby-devel 
+ - lua 
+ - lua-devel
+ - luajit 
+ - luajit-devel 
+ - ctags 
+ - python 
+ - python-devel 
+ - python3 
+ - python3-devel 
+ - tcl-devel 
+ - perl 
+ - perl-devel 
+ - perl-ExtUtils-ParseXS
+ - perl-ExtUtils-XSpp 
+ - perl-ExtUtils-CBuilder
+ - perl-ExtUtils-Embed
+
+ 
