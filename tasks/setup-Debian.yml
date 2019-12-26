@@ -7,3 +7,9 @@
 - name: apt upgrade
   apt:
     upgrade: full
+
+- name: apt remove vim
+  apt:
+    name: vim
+    state: absent
+

@@ -3,3 +3,8 @@
 - name: yum update
   yum:
     update_cache: yes
+
+- name: yum remove vim
+  yum:
+    name: vim
+    state: absent
