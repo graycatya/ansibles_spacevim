@@ -21,3 +21,11 @@
   file:
     path: "/usr/local/vim8"
     state: absent
+
+- name: apt install defaults Software
+  become: true
+  apt:
+    name: "{{ apt_packages }}"
+    state: installed
+  register: task_result
+  

@@ -22,9 +22,6 @@
   become: true
   yum:
     name: "{{ yum_packages }}"
-    enablerepo: ius
+    state: installed
   register: task_result
-  until: task_result is success
-  retries: 3
-  delay: 10
-  when: yum_packages is defuned
+
