@@ -35,11 +35,16 @@
     name: "{{ pip3_packages }}"
     executable: pip3
 
-- name: scp or tar vim8.1
-  become: true
-  unarchive:
-    src: ../files/v8.1.1766.tar.gz
-    dest: ~/VimSrc/
+- name: import config-vim
+  import_tasks: config-vim.yml
+
+
+
+
+
+
+
+  
 
 
 
