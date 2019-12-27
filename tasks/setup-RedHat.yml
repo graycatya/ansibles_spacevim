@@ -25,3 +25,14 @@
     state: installed
   register: task_result
 
+- name: pip3 install packages
+  pip:
+    name: "{{ pip3_packages }}"
+    executable: pip3
+
+- name: scp or tar vim8.1
+  become: true
+  unarchive:
+    src: ../files/v8.1.1766.tar.gz
+    dest: ~/VimSrc/
+

@@ -7,6 +7,7 @@
 #################
 
 apt_python_version: "3.6"
+apt_lua_version: "5.3"
 
 apt_packages:
  - wget 
@@ -14,7 +15,7 @@ apt_packages:
  - cmake 
  - fontconfig
  - git 
- - lua* 
+ - lua{{ apt_lua_version }}* 
  - ruby 
  - libncurses5-dev
  - ttf-mscorefonts-installer
@@ -64,4 +65,15 @@ yum_packages:
  - perl-ExtUtils-CBuilder
  - perl-ExtUtils-Embed
 
- 
+
+#############
+# python3 pip #
+#############
+
+pip3_packages:
+- jedi 
+- yapf 
+- isort 
+- flake8 
+- neovim 
+- pynvim
