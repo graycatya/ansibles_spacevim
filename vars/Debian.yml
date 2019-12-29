@@ -35,3 +35,5 @@ apt_packages:
  - python 
  - python-dev
  - python-doc
+ - python-apt
+ - python3-apt
