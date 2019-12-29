@@ -21,7 +21,7 @@
 
 - name: vim configure
   become: true
-  shell:
+  command:
     chdir: "{{ vim_path }}"
     cmd: "configure.sh"
   register: vim_configure
