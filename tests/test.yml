@@ -1,7 +1,6 @@
 ---
 
-- hosts: centos7
-  remote_user: cat
+- hosts: centos
   become: yes
   become_method: sudo
 

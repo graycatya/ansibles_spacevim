@@ -1,6 +1,10 @@
 ---
 # tasks file for ansibles_vim
 
+- name: system
+  debug:
+    msg: "{{ ansible_pkg_mgr }}"
+
 # Install
 - name: debian install spacevim
   include_tasks: setup-Debian.yml
@@ -9,3 +13,7 @@
 - name: redhat install spacevim
   include_tasks: setup-RedHat.yml
   when: ansible_pkg_mgr == "yum"
+
+- name: centos8 install spacevim
+  include_tasks: setup-CentOs8.yml
+  when: ansible_pkg_mgr == "dnf"

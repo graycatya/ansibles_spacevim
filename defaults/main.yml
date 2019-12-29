@@ -50,9 +50,9 @@ apt_packages:
  - python-dev
  - python-doc
 
-##########
-# CentOS #
-##########
+##################
+# CentOS7 & RedHat #
+##################
 
 yum_packages:
  - gcc 
@@ -81,6 +81,37 @@ yum_packages:
  - perl-devel 
  - perl-ExtUtils-ParseXS
  - perl-ExtUtils-XSpp 
+ - perl-ExtUtils-CBuilder
+ - perl-ExtUtils-Embed
+
+
+##################
+# CentOS8 & RedHat #
+##################
+
+dnf_packages:
+ - gcc 
+ - gcc-c++
+ - libXt*
+ - mkfontscale
+ - fontconfig
+ - ncurses-devel
+ - git 
+ - make 
+ - cmake 
+ - ruby 
+ - ruby-devel 
+ - lua 
+ - lua-libs
+ - ctags 
+ - python2
+ - python2-devel 
+ - python3 
+ - python36-devel 
+ - tcl-devel 
+ - perl 
+ - perl-devel 
+ - perl-ExtUtils-ParseXS
  - perl-ExtUtils-CBuilder
  - perl-ExtUtils-Embed
 

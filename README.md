@@ -1,38 +1,160 @@
-Role Name
+Ansible Role: SpaceVim
 =========
 
-A brief description of the role goes here.
+Installs and configures SpaceVim on RHEL/CentOS(7,8) or Debian/Ubuntu server.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+No special requirements; note that this role requires root access, so either run it in a playbook with a global become: yes, or invoke the role in your playbook like:
+
+```
+- hosts: server
+  become: yes
+  become_method: sudo
+```
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Available variables are listed below, along with default values (see defaults/main.yml)(各系统需要下载软件包):
+
+#### Debian & Ubuntu
+```
+apt_python_version: "3.6"
+apt_lua_version: "5.3"
+
+apt_packages:
+ - wget 
+ - curl 
+ - cmake 
+ - fontconfig
+ - git 
+ - lua{{ apt_lua_version }}* 
+ - ruby 
+ - libncurses5-dev
+ - libgnome2-dev
+ - libgnomeui-dev
+ - libgtk2.0-dev
+ - libatk1.0-dev
+ - libbonoboui2-dev
+ - libcairo2-dev
+ - libx11-dev
+ - libxpm-dev
+ - libxt-dev
+ - ruby-dev
+ - ttf-mscorefonts-installer
+ - ctags 
+ - clang 
+ - nodejs 
+ - net-tools
+ - python3-pip
+ - python-pip
+ - python{{ apt_python_version }}
+ - python{{ apt_python_version }}-dev
+ - python{{ apt_python_version }}-doc
+ - python 
+ - python-dev
+ - python-doc
+```
+
+#### CentOS7 & RedHat
+
+```
+yum_packages:
+ - gcc 
+ - gcc-c++
+ - libXt*
+ - mkfontscale
+ - fontconfig
+ - ncurses-devel
+ - git 
+ - make 
+ - cmake 
+ - centos-release-scl
+ - ruby 
+ - ruby-devel 
+ - lua 
+ - lua-devel
+ - luajit 
+ - luajit-devel 
+ - ctags 
+ - python 
+ - python-devel 
+ - python3 
+ - python3-devel 
+ - tcl-devel 
+ - perl 
+ - perl-devel 
+ - perl-ExtUtils-ParseXS
+ - perl-ExtUtils-XSpp 
+ - perl-ExtUtils-CBuilder
+ - perl-ExtUtils-Embed
+```
+
+#### CentOS8 & RedHat
+
+```
+dnf_packages:
+ - gcc 
+ - gcc-c++
+ - libXt*
+ - mkfontscale
+ - fontconfig
+ - ncurses-devel
+ - git 
+ - make 
+ - cmake 
+ - ruby 
+ - ruby-devel 
+ - lua 
+ - lua-libs
+ - ctags 
+ - python2
+ - python2-devel 
+ - python3 
+ - python36-devel 
+ - tcl-devel 
+ - perl 
+ - perl-devel 
+ - perl-ExtUtils-ParseXS
+ - perl-ExtUtils-CBuilder
+ - perl-ExtUtils-Embed
+```
+
+#### python需要的模块
+
+```
+pip3_packages:
+- jedi 
+- yapf 
+- isort 
+- flake8 
+- neovim 
+- pynvim
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```
+- hosts: server
+  become: yes
+  become_method: sudo
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
 
 License
 -------
 
-BSD
+None.
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was created in 2019 by [graycatya](https://github.com/graycatya).

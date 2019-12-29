@@ -1,0 +1,29 @@
+---
+
+- name: install spacevim
+  become: flase
+  script: ../files/install_spacevim.sh
+  register: spacevim_debug
+
+- name: install spacevim_debug
+  debug:
+    msg: "{{ spacevim_debug.stdout_lines }}"
+
+- name: mkdir .SpaceVim.d
+  become: false
+  file:
+    path: ~/.SpaceVim.d
+    state: directory
+    mode: '0755'
+
+- name: scp init.toml
+  become: false
+  copy:
+    src: ../files/init.toml
+    dest: ~/.SpaceVim.d
+
+- name: scp init.vim
+  become: false
+  copy:
+    src: ../files/init.vim
+    dest: ~/.SpaceVim

@@ -32,11 +32,5 @@
   debug:
     msg: "{{ vim_configure.stdout_lines }}"
 
-- name: install spacevim
-  become: flase
-  script: ../files/install_spacevim.sh
-  register: spacevim_debug
-
-- name: install spacevim_debug
-  debug:
-    msg: "{{ spacevim_debug.stdout_lines }}"
+- name: import config-spacevim
+  import_tasks: config-spacevim.yml

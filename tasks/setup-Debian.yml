@@ -8,7 +8,7 @@
 - name: apt upgrade
   become: true
   apt:
-    upgrade: full
+    upgrade: yes
 
 - name: apt remove vim
   become: true
