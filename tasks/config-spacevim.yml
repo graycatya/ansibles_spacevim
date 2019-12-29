@@ -2,7 +2,7 @@
 
 - name: install spacevim
   become: flase
-  script: ../files/install_spacevim.sh
+  shell: ../files/install_spacevim.sh
   register: spacevim_debug
 
 - name: install spacevim_debug

@@ -7,6 +7,8 @@
   debug:
     msg: "{{ ansible_os_family }}.{{ ansible_distribution_major_version }}-{{ ansible_pkg_mgr }}"
 
+- name: Include pip variables.
+  include_vars: ../vars/pip_install.yml
 # Install
 - name: debian install spacevim
   include_tasks: setup-Debian.yml

@@ -1,0 +1,8 @@
+---
+pip3_packages:
+- jedi 
+- yapf 
+- isort 
+- flake8 
+- neovim 
+- pynvim

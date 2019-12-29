@@ -39,14 +39,3 @@
 
 - name: import config-vim
   import_tasks: config-vim.yml
-
-
-
-
-
-
-
-  
-
-
-

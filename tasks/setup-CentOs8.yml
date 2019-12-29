@@ -5,12 +5,6 @@
 - name: Include OS-specific variables.
   include_vars: ../vars/CentOs8.yml
 
-- name: dnf update
-  become: true
-  dnf:
-    name: "*"
-    state: latest
-
 - name: dnf remove vim
   become: true
   dnf:

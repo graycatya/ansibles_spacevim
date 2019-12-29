@@ -3,12 +3,6 @@
 - name: Include OS-specific variables.
   include_vars: ../vars/RedHat.yml
 
-- name: yum update
-  become: true
-  yum:
-    name: "*"
-    state: latest
-
 - name: yum remove vim
   become: true
   yum:
@@ -35,4 +29,3 @@
 
 - name: import config-vim
   import_tasks: config-vim.yml
-

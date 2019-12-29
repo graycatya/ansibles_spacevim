@@ -10,4 +10,3 @@
 
     - name: test config
       import_tasks: ../tasks/main.yml
-      

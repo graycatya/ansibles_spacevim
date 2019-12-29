@@ -1,20 +1,5 @@
 ---
-# defaults file for ansibles_vim
-#可被覆盖的默认变量
 
 vim_path: "/root/VimSrc/vim-8.1.1766"
 
 vim_config_file: "files/configure.sh"
-
-
-#############
-# python3 pip #
-#############
-
-pip3_packages:
-- jedi 
-- yapf 
-- isort 
-- flake8 
-- neovim 
-- pynvim
