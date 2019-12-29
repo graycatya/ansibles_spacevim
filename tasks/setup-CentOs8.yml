@@ -1,5 +1,4 @@
 ---
-  
 # ../vars/CentOs8.yml
 
 - name: Include OS-specific variables.
@@ -11,7 +10,7 @@
     name: vim
     state: removed
 
-- name: delete usr vim 
+- name: delete usr vim
   become: true
   file:
     path: "/usr/local/vim8"
@@ -29,7 +28,7 @@
     name: "{{ pip3_packages }}"
     executable: pip3
 
-- name: dnf install vim 
+- name: dnf install vim
   become: true
   dnf:
     name: vim

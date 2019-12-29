@@ -9,7 +9,7 @@
     name: vim
     state: removed
 
-- name: delete usr vim 
+- name: delete usr vim
   become: true
   file:
     path: "/usr/local/vim8"

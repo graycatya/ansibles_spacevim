@@ -1,11 +1,10 @@
 ---
-- name: mdkir VimSrc 
+- name: mdkir VimSrc
   become: true
   file:
     path: ~/VimSrc/
-    state: directory 
+    state: directory
     mode: 0755
-
 
 - name: scp or tar vim8.1
   become: true
@@ -23,7 +22,7 @@
 
 - name: vim configure
   become: true
-  shell: 
+  shell:
     chdir: "{{ vim_path }}"
     cmd: "./configure.sh"
   register: vim_configure
