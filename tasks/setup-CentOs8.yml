@@ -2,7 +2,7 @@
 # ../vars/CentOs8.yml
 
 - name: Include OS-specific variables.
-  include_vars: ../vars/CentOs8.yml
+  include_vars: vars/CentOs8.yml
 
 - name: dnf remove vim
   become: true

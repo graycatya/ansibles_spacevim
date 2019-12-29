@@ -1,12 +1,8 @@
 ---
 
 - hosts: centos
-  become: yes
-  become_method: sudo
+  #become_method: sudo
+  roles:
+    - role: graycatya.ansibles_spacevim
+      become: yes
 
-  vars_files: ../defaults/main.yml
-
-  tasks:
-
-    - name: test config
-      import_tasks: ../tasks/main.yml

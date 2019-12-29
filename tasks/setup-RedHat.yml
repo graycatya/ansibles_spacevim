@@ -1,7 +1,7 @@
 ---
 
 - name: Include OS-specific variables.
-  include_vars: ../vars/RedHat.yml
+  include_vars: vars/RedHat.yml
 
 - name: yum remove vim
   become: true

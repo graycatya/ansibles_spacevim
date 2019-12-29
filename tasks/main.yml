@@ -3,12 +3,14 @@
 
 
 
-- name: system
-  debug:
-    msg: "{{ ansible_os_family }}.{{ ansible_distribution_major_version }}-{{ ansible_pkg_mgr }}"
-
+#- name: system
+#  debug:
+#    msg: "{{ ansible_os_family }}.{{ ansible_distribution_major_version }}-{{ ansible_pkg_mgr }}"
+- name: Include def variables.
+  include_vars: defaults/main.yml
+  
 - name: Include pip variables.
-  include_vars: ../vars/pip_install.yml
+  include_vars: vars/pip_install.yml
 # Install
 - name: debian install spacevim
   include_tasks: setup-Debian.yml

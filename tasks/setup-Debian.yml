@@ -1,6 +1,6 @@
 ---
 - name: Include OS-specific variables.
-  include_vars: ../vars/Debian.yml
+  include_vars: vars/Debian.yml
 
 - name: apt update
   become: true

@@ -2,7 +2,7 @@
 
 - name: install spacevim
   become: flase
-  script: ../files/install_spacevim.sh
+  script: files/install_spacevim.sh
   register: spacevim_debug
 
 - name: install spacevim_debug
@@ -19,11 +19,11 @@
 - name: scp init.toml
   become: false
   copy:
-    src: ../files/init.toml
+    src: init.toml
     dest: ~/.SpaceVim.d
 
 - name: scp init.vim
   become: false
   copy:
-    src: ../files/init.vim
+    src: init.vim
     dest: ~/.SpaceVim
