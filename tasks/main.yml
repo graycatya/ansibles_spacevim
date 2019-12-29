@@ -1,9 +1,11 @@
 ---
 # tasks file for ansibles_vim
 
+
+
 - name: system
   debug:
-    msg: "{{ ansible_pkg_mgr }}"
+    msg: "{{ ansible_os_family }}.{{ ansible_distribution_major_version }}-{{ ansible_pkg_mgr }}"
 
 # Install
 - name: debian install spacevim

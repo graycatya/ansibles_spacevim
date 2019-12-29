@@ -1,5 +1,8 @@
 ---
 
+- name: Include OS-specific variables.
+  include_vars: ../vars/RedHat.yml
+
 - name: yum update
   become: true
   yum:

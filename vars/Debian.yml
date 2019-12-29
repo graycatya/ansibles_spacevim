@@ -1,4 +1,38 @@
 ---
 
+apt_python_version: "3.6"
+apt_lua_version: "5.3"
 
+apt_packages:
+ - wget 
+ - curl 
+ - cmake 
+ - fontconfig
+ - git 
+ - lua{{ apt_lua_version }}* 
+ - ruby 
+ - libncurses5-dev
+ - libgnome2-dev
+ - libgnomeui-dev
+ - libgtk2.0-dev
+ - libatk1.0-dev
+ - libbonoboui2-dev
+ - libcairo2-dev
+ - libx11-dev
+ - libxpm-dev
+ - libxt-dev
+ - ruby-dev
+ - ttf-mscorefonts-installer
+ - ctags 
+ - clang 
+ - nodejs 
+ - net-tools
+ - python3-pip
+ - python-pip
+ - python{{ apt_python_version }}
+ - python{{ apt_python_version }}-dev
+ - python{{ apt_python_version }}-doc
+ - python 
+ - python-dev
+ - python-doc
 

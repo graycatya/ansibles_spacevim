@@ -4,10 +4,10 @@
   become: yes
   become_method: sudo
 
-  vars_files:
-    - ../defaults/main.yml
+  vars_files: ../defaults/main.yml
 
   tasks:
+
     - name: test config
       import_tasks: ../tasks/main.yml
       
