@@ -12,19 +12,10 @@
     src: files/v8.1.1766.tar.gz
     dest: ~/VimSrc/
 
-- name: scp configure.sh
-  become: true
-  copy:
-    src: "../{{ vim_config_file }}"
-    dest: "{{ vim_path }}"
-    mode: a+x
-
-
 - name: vim configure
   become: true
-  shell:
+  script: files/configure.sh
     chdir: "{{ vim_path }}"
-    cmd: "./configure.sh"
   register: vim_configure
 
 - name: debug vim configure

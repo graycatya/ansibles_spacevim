@@ -1,8 +1,7 @@
 ---
 
 - hosts: centos
-  #become_method: sudo
+  become_method: sudo
   roles:
     - role: graycatya.ansibles_spacevim
       become: yes
-

@@ -9,9 +9,11 @@ Requirements
 No special requirements; note that this role requires root access, so either run it in a playbook with a global become: yes, or invoke the role in your playbook like:
 
 ```
-- hosts: server
-  become: yes
+- hosts: centos
   become_method: sudo
+  roles:
+    - role: graycatya.ansibles_spacevim
+      become: yes
 ```
 
 Role Variables
