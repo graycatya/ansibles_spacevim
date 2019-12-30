@@ -20,34 +20,10 @@
     mode: a+x
 
 
-#- name: vim configure
-#  become: true
-#  shell: "./configure.sh chdir={{ vim_path }}"
-#  register: vim_configure
-
-- name: configure vim
+- name: vim configure
   become: true
-  command:
-    chdir: "{{ vim_path }}"
-    cmd: "./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-python3interp=yes --enable-perlinterp=yes --enable-luainterp=yes --enable-gui=gtk2 --enable-cscope --enable-xim --with-x --with-gnome --prefix=/usr/local/vim8"
-
-- name: make vim
-  become: true
-  command:
-    chdir: "{{ vim_path }}"
-    cmd: "make -j2"
-
-- name: make install vim
-  become: true
-  command:
-    chdir: "{{ vim_path }}"
-    cmd: "make install"
-
-- name: ln vim
-  become: true
-  command:
-    chdir: "{{ vim_path }}"
-    cmd: "ln -s /usr/local/vim8/bin/vim /usr/local/bin/vim"
+  shell: "./configure.sh > log.txt chdir={{ vim_path }}"
+  register: vim_configure
 
 - name: debug vim configure
   debug:
