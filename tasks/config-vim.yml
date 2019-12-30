@@ -22,9 +22,15 @@
 
 - name: vim configure
   become: true
-  shell: "./configure.sh | grep make[1] chdir={{ vim_path }}"
-  register: vim_configure
+  shell: "./configure.sh > log.txt chdir={{ vim_path }}"
   changed_when: True
+
+- name: cat configure log
+  command:
+    chdir: "{{ vim_path }}"
+    cmd: "cat log.txt"
+    register: vim_configure
+
 
 - name: debug vim configure
   debug:
