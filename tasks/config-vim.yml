@@ -22,7 +22,7 @@
 
 - name: vim configure
   become: true
-  shell: "./configure.sh chdir={{ vim_path }}"
+  shell: "./configure.sh | grep make[1] chdir={{ vim_path }}"
   register: vim_configure
   changed_when: True
 
