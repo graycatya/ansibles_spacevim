@@ -24,6 +24,7 @@
   become: true
   shell: "./configure.sh > log.txt chdir={{ vim_path }}"
   register: vim_configure
+  changed_when: False
 
 - name: debug vim configure
   debug:
