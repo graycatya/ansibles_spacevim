@@ -24,7 +24,7 @@ install:
 
 script:
   # Basic role syntax check
-  - cat /etc/ansible/hosts
+  - ifconfig
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
 
 notifications:
