@@ -28,7 +28,7 @@
 - name: cat configure log
   command:
     chdir: "{{ vim_path }}"
-    cmd: "cat log.txt"
+    free_from: "cat log.txt"
     register: vim_configure
 
 
