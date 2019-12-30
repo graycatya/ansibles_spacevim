@@ -22,9 +22,9 @@
 
 - name: vim configure
   become: true
-  shell: "./configure.sh > log.txt chdir={{ vim_path }}"
+  shell: "./configure.sh chdir={{ vim_path }}"
   register: vim_configure
-  changed_when: False
+  changed_when: True
 
 - name: debug vim configure
   debug:
