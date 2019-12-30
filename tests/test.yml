@@ -3,5 +3,5 @@
 - hosts: localhost
   become_method: sudo
   roles:
-    include_tasks: tasks/main.yml
-    become: yes
+    - role: graycatya.ansibles_spacevim
+      become: yes
