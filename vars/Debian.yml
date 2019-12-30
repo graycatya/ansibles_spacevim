@@ -1,6 +1,6 @@
 ---
 
-apt_python_version: "3.6"
+apt_python_version: "3"
 apt_lua_version: "5.3"
 
 apt_packages:
