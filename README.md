@@ -1,5 +1,6 @@
-Ansible Role: SpaceVim [![Build Status](https://travis-ci.org/graycatya/ansibles_spacevim.svg?branch=master)](https://travis-ci.org/graycatya/ansibles_spacevim)
+Ansible Role: SpaceVim 
 =========
+[![Build Status](https://travis-ci.org/graycatya/ansibles_spacevim.svg?branch=master)](https://travis-ci.org/graycatya/ansibles_spacevim)
 
 Installs and configures SpaceVim on RHEL/CentOS(7,8) or Debian/Ubuntu server.
 
