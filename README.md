@@ -3,8 +3,21 @@ Ansible Role: SpaceVim
 
 Installs and configures SpaceVim on RHEL/CentOS(7,8) or Debian/Ubuntu server.
 
+Tested on:
+=========
+* CentOS7
+* CentOS8
+* Ubuntu18.04
+* Ubuntu19.04
+
 Requirements
-------------
+=========
+
+1. ubuntu19.04
+  需要设置: 
+```
+ansible_python_interpreter=/usr/bin/python3
+```
 
 No special requirements; note that this role requires root access, so either run it in a playbook with a global become: yes, or invoke the role in your playbook like:
 
@@ -17,13 +30,13 @@ No special requirements; note that this role requires root access, so either run
 ```
 
 Role Variables
---------------
+=========
 
 Available variables are listed below, along with default values (see defaults/main.yml)(各系统需要下载软件包):
 
 #### Debian & Ubuntu
 ```
-apt_python_version: "3.6"
+apt_python_version: "3"
 apt_lua_version: "5.3"
 
 apt_packages:
@@ -58,6 +71,8 @@ apt_packages:
  - python 
  - python-dev
  - python-doc
+ - python-apt
+ - python3-apt
 ```
 
 #### CentOS7 & RedHat
@@ -92,6 +107,7 @@ yum_packages:
  - perl-ExtUtils-XSpp 
  - perl-ExtUtils-CBuilder
  - perl-ExtUtils-Embed
+ - clang*
 ```
 
 #### CentOS8 & RedHat
@@ -122,6 +138,7 @@ dnf_packages:
  - perl-ExtUtils-ParseXS
  - perl-ExtUtils-CBuilder
  - perl-ExtUtils-Embed
+ - clang*
 ```
 
 #### python需要的模块
@@ -137,26 +154,25 @@ pip3_packages:
 ```
 
 Dependencies
-------------
+=========
 
 None.
 
 Example Playbook
-----------------
+=========
 
 ```
 - hosts: server
   become: yes
   become_method: sudo
-
 ```
 
 License
--------
+=========
 
 None.
 
 Author Information
-------------------
+=========
 
 This role was created in 2019 by [graycatya](https://github.com/graycatya).

@@ -23,13 +23,14 @@
 - name: vim configure
   become: true
   shell: "./configure.sh > log.txt chdir={{ vim_path }}"
-  changed_when: True
+  changed_when: true
 
 - name: cat configure log
   command:
     chdir: "{{ vim_path }}"
     free_from: "cat log.txt"
     register: vim_configure
+  changed_when: true
 
 
 - name: debug vim configure
