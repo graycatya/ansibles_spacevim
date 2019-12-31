@@ -19,6 +19,9 @@ Requirements
 ```
 ansible_python_interpreter=/usr/bin/python3
 ```
+2. windows(配置winrm)
+
+[Rispose_winrm](Dispose_Windows.md)
 
 No special requirements; note that this role requires root access, so either run it in a playbook with a global become: yes, or invoke the role in your playbook like:
 
