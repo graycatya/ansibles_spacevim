@@ -26,10 +26,8 @@
   changed_when: true
 
 - name: cat configure log
-  command:
-    chdir: "{{ vim_path }}"
-    free_from: "cat log.txt"
-    register: vim_configure
+  command: cat {{ vim_path }}/log.txt
+  register: vim_configure
   changed_when: true
 
 
